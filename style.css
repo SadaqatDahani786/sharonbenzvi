@@ -100,3 +100,198 @@ p {
   font-family: inherit;
   overflow-wrap: break-word;
 }
+
+/*
+** **
+** ** ** Header
+** **
+*/
+.header {
+  --border-size: 6px;
+  --border-color: white;
+  height: 5.6rem;
+  background-image: linear-gradient(to right, #101a23, #093a58, #101a23);
+  border-top: var(--border-size) solid var(--border-color);
+  border-bottom: var(--border-size) solid var(--border-color);
+  padding: 0 48px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  position: relative;
+}
+
+/*
+** **
+** ** ** Header -> Logo
+** **
+*/
+.header .logo {
+  width: 220px;
+}
+
+/*
+** **
+** ** ** Header -> Nav
+** **
+*/
+.header .nav {
+  height: 80%;
+}
+
+.header .nav ul {
+  display: flex;
+  height: 100%;
+}
+
+.header .nav ul li {
+  height: 100%;
+  list-style: none;
+  transition: all 0.3s ease;
+  border-bottom: 3px solid transparent;
+}
+
+.header .nav a {
+  color: white;
+  font-size: 1.2rem;
+  text-decoration: none;
+  height: 100%;
+  display: flex;
+  padding: 0 16px;
+  align-items: center;
+}
+
+.header nav ul li:hover {
+  border-bottom: 3px solid white;
+}
+
+/*
+** **
+** ** ** Header -> Nav Menu Button
+** **
+*/
+.header #nav-button-input,
+.nav-menu-button-wrapper {
+  display: none;
+}
+
+.header .nav-menu-button {
+  width: 32px;
+  height: 32px;
+  border-radius: 4px;
+  background: #335364;
+  position: relative;
+  cursor: pointer;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border: none;
+}
+
+.header .nav-menu-button span {
+  width: 80%;
+  height: 4px;
+  background-color: white;
+  position: relative;
+  transition: all 0.3s ease;
+}
+
+.header .nav-menu-button span::before,
+.header .nav-menu-button span::after {
+  content: "";
+  display: block;
+  position: absolute;
+  top: 50%;
+  left: 0;
+  width: 100%;
+  height: 4px;
+  background-color: white;
+  transition: all 0.3s ease;
+}
+
+.header .nav-menu-button span::before {
+  top: -8px;
+}
+
+.header .nav-menu-button span::after {
+  top: 8px;
+}
+
+.header #nav-button-input:checked ~ label span {
+  background-color: transparent;
+}
+
+.header #nav-button-input:checked ~ label .nav-menu-button span::before {
+  top: 0%;
+  transform: rotate(40deg);
+}
+
+.header #nav-button-input:checked ~ label .nav-menu-button span::after {
+  top: 0%;
+  transform: rotate(-40deg);
+}
+
+/*
+** **
+** ** ** Header -> Nav Responsive
+** **
+*/
+.header .nav-responsive {
+  width: 100%;
+  height: 0px;
+  background: #005576;
+  z-index: 10;
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  transform: translateY(100%);
+  overflow: hidden;
+  transition: all 0.3s ease;
+}
+
+.header .nav-responsive {
+  display: none;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.header .nav-responsive a {
+  color: white;
+  font-size: 1.2rem;
+  text-decoration: none;
+  text-align: center;
+  display: block;
+  padding: 8px 0;
+  transition: all 0.3s ease;
+}
+.header .nav-responsive a:hover {
+  background: white;
+  color: black;
+}
+
+.header #nav-button-input:checked ~ .nav-responsive {
+  height: 90px;
+}
+
+/*
+** **
+** ** ** Media Queries
+** **
+*/
+
+@media screen and (max-width: 700px) {
+  .header {
+    padding: 0 8px;
+  }
+
+  .nav-menu-button-wrapper {
+    display: block;
+  }
+
+  .header .nav {
+    display: none;
+  }
+
+  .header .nav-responsive {
+    display: flex;
+  }
+}
