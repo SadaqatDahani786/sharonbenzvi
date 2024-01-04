@@ -5,6 +5,7 @@
 */
 :root {
   --primary: #001b25;
+  --secondary: #005171;
   --info: #39c;
 
   --divider-color: #8bd6f3;
@@ -397,7 +398,7 @@ section.hero {
 }
 
 /*
-** **
+** **001b25
 ** ** ** Hero -> Services
 ** **
 */
@@ -508,46 +509,46 @@ section.about {
   border-bottom: var(--border-size) solid var(--primary);
 }
 
-.about .left,
-.about .right {
+.left,
+.right {
   flex: 1;
   display: flex;
   flex-direction: column;
   justify-content: center;
 }
 
-.about .left {
+.left {
   align-items: flex-end;
 }
 
-.about .left img.featured-image {
+.left img.featured-image {
   max-width: 500px;
 }
 
-.about .right {
+.right {
   display: flex;
   flex-direction: column;
   gap: 24px;
 }
 
-.about h2 {
+.right h2 {
   font-family: "Rubik", sans-serif;
 }
 
-.about p {
+.right p {
   font-size: 1.2rem;
   font-weight: 300;
 }
 
-.about p.lead {
+.right p.lead {
   font-size: 1.4rem;
 }
 
-.about p.callout {
+.right p.callout {
   font-weight: 500;
 }
 
-.about a.read-more {
+.right a.button {
   width: fit-content;
   padding: 8px 24px;
   background: var(--primary);
@@ -556,7 +557,7 @@ section.about {
   transition: all 0.3s ease;
 }
 
-.about a.read-more:hover {
+.right a.button:hover {
   background-color: var(--info);
 }
 
@@ -591,6 +592,7 @@ section.about {
     flex-direction: column;
     background-size: 200% 103%;
     background-position: center center;
+    padding: 140px 24px;
   }
 
   .about .left {
@@ -599,5 +601,73 @@ section.about {
 
   .about .title {
     display: flex;
+  }
+}
+
+/*
+** **
+** ** ** Activity
+** **
+*/
+section.activity {
+  width: 100%;
+  min-height: 100%;
+  color: white;
+  background: var(--primary);
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.activity .box {
+  width: 100%;
+  height: 5rem;
+  border-top: 3px solid white;
+  border-bottom: 3px solid white;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.activity .box h3 {
+  font-size: 2rem;
+  color: white;
+}
+
+.activity .main-content {
+  display: flex;
+  gap: 24px;
+  padding: 80px 24px;
+}
+
+.activity .row {
+  display: flex;
+  max-width: 90%;
+}
+
+.activity .row i {
+  display: block;
+  flex: 0 0 30px;
+  font-weight: bold;
+  font-size: 2rem;
+}
+
+.right a.button {
+  background-color: var(--secondary);
+  align-self: center;
+}
+
+/*
+** **
+** ** ** Media Queries
+** **
+*/
+@media screen and (max-width: 1200px) {
+  section.activity .main-content {
+    flex-direction: column-reverse;
+  }
+
+  .main-content .left {
+    align-items: center;
   }
 }
