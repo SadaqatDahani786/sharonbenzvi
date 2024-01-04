@@ -6,7 +6,11 @@
 :root {
   --primary: #001b25;
   --secondary: #005171;
+
   --info: #39c;
+
+  --black: #000;
+  --white: #fff;
 
   --divider-color: #8bd6f3;
 
@@ -138,7 +142,7 @@ p {
 */
 .header {
   --border-size: 6px;
-  --border-color: white;
+  --border-color: var(--white);
   height: 5.6rem;
   background-image: linear-gradient(to right, #101a23, #093a58, #101a23);
   border-top: var(--border-size) solid var(--border-color);
@@ -181,7 +185,7 @@ p {
 }
 
 .header .nav a {
-  color: white;
+  color: var(--white);
   font-size: 1.2rem;
   text-decoration: none;
   height: 100%;
@@ -191,7 +195,7 @@ p {
 }
 
 .header nav ul li:hover {
-  border-bottom: 3px solid white;
+  border-bottom: 3px solid var(--white);
 }
 
 /*
@@ -220,7 +224,7 @@ p {
 .header .nav-menu-button span {
   width: 80%;
   height: 4px;
-  background-color: white;
+  background-color: var(--white);
   position: relative;
   transition: all 0.3s ease;
 }
@@ -234,7 +238,7 @@ p {
   left: 0;
   width: 100%;
   height: 4px;
-  background-color: white;
+  background-color: var(--white);
   transition: all 0.3s ease;
 }
 
@@ -285,7 +289,7 @@ p {
 }
 
 .header .nav-responsive a {
-  color: white;
+  color: var(--white);
   font-size: 1.2rem;
   text-decoration: none;
   text-align: center;
@@ -294,7 +298,7 @@ p {
   transition: all 0.3s ease;
 }
 .header .nav-responsive a:hover {
-  background: white;
+  background: var(--white);
   color: black;
 }
 
@@ -355,7 +359,7 @@ section.hero {
   justify-content: center;
   align-items: center;
   text-align: center;
-  color: white;
+  color: var(--white);
 }
 
 .title .hero__logo {
@@ -380,7 +384,7 @@ section.hero {
 
 .subtitle p,
 .title p {
-  color: white;
+  color: var(--white);
   font-size: 1.8rem;
   font-family: "Bellefair", serif;
   display: flex;
@@ -412,7 +416,7 @@ section.hero {
 
 .hero .services a {
   text-decoration: none;
-  color: white;
+  color: var(--white);
 }
 
 .hero .card {
@@ -463,7 +467,7 @@ section.hero {
 ** **
 */
 .hero .end {
-  color: white;
+  color: var(--white);
   font-size: 2rem;
   width: 100%;
   text-align: center;
@@ -486,8 +490,8 @@ section.hero {
 .hero .end .box-inner {
   width: 100%;
   height: 100%;
-  border-top: var(--border-size) solid white;
-  border-bottom: var(--border-size) solid white;
+  border-top: var(--border-size) solid var(--white);
+  border-bottom: var(--border-size) solid var(--white);
 }
 
 /*
@@ -552,7 +556,7 @@ section.about {
   width: fit-content;
   padding: 8px 24px;
   background: var(--primary);
-  color: white;
+  color: var(--white);
   text-decoration: none;
   transition: all 0.3s ease;
 }
@@ -612,26 +616,27 @@ section.about {
 section.activity {
   width: 100%;
   min-height: 100%;
-  color: white;
+  color: var(--white);
   background: var(--primary);
   display: flex;
   flex-direction: column;
   justify-content: space-between;
 }
 
-.activity .box {
+.box {
   width: 100%;
   height: 5rem;
-  border-top: 3px solid white;
-  border-bottom: 3px solid white;
+  background: var(--primary);
+  border-top: 3px solid var(--white);
+  border-bottom: 3px solid var(--white);
   display: flex;
   justify-content: center;
   align-items: center;
 }
 
-.activity .box h3 {
+.box h3 {
   font-size: 2rem;
-  color: white;
+  color: var(--white);
 }
 
 .activity .main-content {
@@ -640,12 +645,12 @@ section.activity {
   padding: 80px 24px;
 }
 
-.activity .row {
+.row {
   display: flex;
   max-width: 90%;
 }
 
-.activity .row i {
+.row i {
   display: block;
   flex: 0 0 30px;
   font-weight: bold;
@@ -669,5 +674,65 @@ section.activity {
 
   .main-content .left {
     align-items: center;
+  }
+}
+
+/*
+** **
+** ** ** Section Our Customers
+** **
+*/
+section.our-customers {
+  width: 100%;
+  min-height: 100%;
+  display: flex;
+  flex-direction: column;
+  background: var(--primary);
+}
+
+.our-customers .left .wrapper {
+  border: 1px solid black;
+  padding: 40px;
+}
+
+.our-customers .main-content {
+  width: 100%;
+  flex: 1;
+  background-image: url(assets/background\ img.jpg);
+  display: flex;
+  flex-direction: row-reverse;
+  gap: 40px;
+  margin: 16px 0;
+}
+
+.our-customers .main-content .left {
+  align-items: flex-start;
+}
+
+.our-customers .main-content .right {
+  align-items: flex-end;
+}
+
+.our-customers .main-content .row {
+  align-items: flex-start;
+  width: 490px;
+}
+
+/*
+** **
+** ** ** Media Queries
+** **
+*/
+@media screen and (max-width: 1200px) {
+  section.our-customers .main-content {
+    flex-direction: column;
+    align-items: center;
+    background-size: 150% 100%;
+    background-position: center center;
+    padding: 80px 24px;
+  }
+
+  .our-customers .main-content .row {
+    width: 100%;
   }
 }
