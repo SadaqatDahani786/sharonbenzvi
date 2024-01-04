@@ -7,7 +7,7 @@
   --primary: #001b25;
   --secondary: #005171;
 
-  --info: #39c;
+  --info: #2a5d98;
 
   --black: #000;
   --white: #fff;
@@ -734,5 +734,184 @@ section.our-customers {
 
   .our-customers .main-content .row {
     width: 100%;
+  }
+}
+
+/*
+** **
+** ** ** Footer
+** **
+*/
+footer.footer {
+  width: 100%;
+  padding-top: 80px;
+  padding-left: 24px;
+  padding-right: 24px;
+  color: var(--white);
+  background: var(--info);
+}
+
+.footer .wrapper {
+  margin: auto;
+  height: 100%;
+  max-width: 1100px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  gap: 40px;
+}
+
+.footer .content {
+  margin: auto 0;
+  display: flex;
+  align-items: flex-end;
+  gap: 16px;
+}
+
+.footer .content .contact-info {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-end;
+  height: 200px;
+  position: relative;
+}
+
+.footer .content .contact-info,
+.footer .content .contact-form {
+  flex: 1;
+}
+
+.footer .content .contact-info a.footer-logo {
+  position: absolute;
+  bottom: 0;
+  right: 0;
+}
+
+.footer a.contact-link {
+  text-decoration: none;
+  font-size: 1.8rem;
+  font-weight: 300;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  width: fit-content;
+  color: inherit;
+}
+
+/*
+** **
+** ** ** Footer -> Contact Form
+** **
+*/
+.footer .contact-form {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.contact-header,
+.contact-header .items {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+}
+
+.contact-header p {
+  font-size: 1.8rem;
+}
+
+.contact-header a {
+  font-size: 1.8rem;
+  text-decoration: none;
+  color: inherit;
+  width: 48px;
+  height: 48px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 8px;
+  transition: all 0.2s ease-out;
+}
+
+.contact-header a:hover {
+  transform: scale(1.1);
+}
+
+.footer .form-group {
+  display: flex;
+  gap: 12px;
+}
+
+.footer .form-group > * {
+  flex: 1;
+}
+
+.footer .form-group input {
+  border-radius: 4px;
+  height: 2.6rem;
+}
+
+.footer .form-group button {
+  height: 2.6rem;
+  background: transparent;
+  color: inherit;
+  border: 1px solid var(--white);
+  cursor: pointer;
+  transition: all 0.2s ease-out;
+}
+
+.footer .form-group button:hover {
+  background-color: var(--primary);
+}
+
+/*
+** **
+** ** ** Footer -> Copyright 
+** **
+*/
+.footer .copyright {
+  border-top: 1px solid var(--white);
+  text-align: center;
+}
+
+.footer .copyright p.copyright-text {
+  font-size: 1.3rem;
+  padding: 24px 0;
+}
+
+/*
+** **
+** ** ** Media Queries
+** **
+*/
+@media screen and (max-width: 980px) {
+  .footer .content {
+    flex-direction: column-reverse;
+    align-items: center;
+  }
+
+  .footer .content .contact-info a.footer-logo {
+    position: static;
+  }
+
+  .footer a.contact-link {
+    display: none;
+  }
+
+  .contact-header {
+    flex-direction: column;
+  }
+}
+
+@media screen and (max-width: 680px) {
+  .contact-form .form-group {
+    flex-direction: column;
+  }
+
+  .footer .form-group > * {
+    flex: 0 0 2.7rem;
   }
 }
