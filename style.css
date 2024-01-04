@@ -132,7 +132,70 @@ h6 {
 
 p {
   font-family: inherit;
+  font-size: 1.2rem;
+  font-weight: 300;
   overflow-wrap: break-word;
+}
+
+/*
+** **
+** ** ** Recipes
+** **
+*/
+p.lead {
+  color: inherit;
+  font-size: 1.4rem;
+}
+
+p.callout {
+  color: inherit;
+  font-weight: 500;
+}
+
+.row {
+  display: flex;
+  gap: 8px;
+  max-width: 80%;
+}
+
+.row .icon-wrap {
+  flex: 0 0 30px;
+}
+
+.row ion-icon {
+  font-size: 2rem;
+  color: inherit;
+  --ionicon-stroke-width: 80px;
+}
+
+.box-wrapper {
+  width: 100%;
+  height: 6rem;
+  display: flex;
+  align-items: center;
+  background: var(--primary);
+}
+
+.box {
+  width: 100%;
+  height: 5rem;
+  background: var(--primary);
+  border-top: 3px solid var(--white);
+  border-bottom: 3px solid var(--white);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.box h3 {
+  font-size: 2rem;
+  color: var(--white);
+}
+
+@media screen and (max-width: 1200px) {
+  .row {
+    max-width: 100%;
+  }
 }
 
 /*
@@ -336,6 +399,7 @@ p {
 */
 section.hero {
   min-height: 100%;
+  font-family: inherit;
   background: #002030;
   display: flex;
   flex-direction: column;
@@ -535,21 +599,21 @@ section.about {
   gap: 24px;
 }
 
+.right p.lead {
+  max-width: 80%;
+}
+
 .right h2 {
   font-family: "Rubik", sans-serif;
 }
 
 .right p {
   font-size: 1.2rem;
-  font-weight: 300;
+  width: 80%;
 }
 
 .right p.lead {
   font-size: 1.4rem;
-}
-
-.right p.callout {
-  font-weight: 500;
 }
 
 .right a.button {
@@ -599,12 +663,19 @@ section.about {
     padding: 140px 24px;
   }
 
-  .about .left {
+  .about .left,
+  .about .right {
     align-items: center;
   }
 
   .about .title {
     display: flex;
+  }
+
+  .right p,
+  .right p.lead {
+    max-width: 100%;
+    width: 100%;
   }
 }
 
@@ -623,38 +694,10 @@ section.activity {
   justify-content: space-between;
 }
 
-.box {
-  width: 100%;
-  height: 5rem;
-  background: var(--primary);
-  border-top: 3px solid var(--white);
-  border-bottom: 3px solid var(--white);
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
-
-.box h3 {
-  font-size: 2rem;
-  color: var(--white);
-}
-
 .activity .main-content {
   display: flex;
   gap: 24px;
   padding: 80px 24px;
-}
-
-.row {
-  display: flex;
-  max-width: 90%;
-}
-
-.row i {
-  display: block;
-  flex: 0 0 30px;
-  font-weight: bold;
-  font-size: 2rem;
 }
 
 .right a.button {
@@ -672,7 +715,8 @@ section.activity {
     flex-direction: column-reverse;
   }
 
-  .main-content .left {
+  .main-content .left,
+  .main-content .right {
     align-items: center;
   }
 }
@@ -688,6 +732,7 @@ section.our-customers {
   display: flex;
   flex-direction: column;
   background: var(--primary);
+  color: var(--primary);
 }
 
 .our-customers .left .wrapper {
@@ -732,8 +777,10 @@ section.our-customers {
     padding: 80px 24px;
   }
 
-  .our-customers .main-content .row {
+  .our-customers .main-content .row,
+  .right p {
     width: 100%;
+    max-width: 100%;
   }
 }
 
@@ -906,6 +953,12 @@ footer.footer {
   }
 }
 
+/*
+** **
+** ** ** Media Queries
+** **
+*/
+
 @media screen and (max-width: 680px) {
   .contact-form .form-group {
     flex-direction: column;
@@ -913,5 +966,87 @@ footer.footer {
 
   .footer .form-group > * {
     flex: 0 0 2.7rem;
+  }
+}
+
+/*
+** **
+** ** ** Section Additionally
+** **
+*/
+section.additionally {
+  min-height: 100%;
+  background-image: url(assets/background\ img.jpg);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding-top: 80px;
+}
+
+.additionally .wrapper {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  gap: 16px;
+  max-width: 1200px;
+  padding: 48px 24px;
+}
+
+.additionally .heading {
+  display: flex;
+  gap: 16px;
+}
+
+.additionally .heading h2 {
+  color: var(--primary);
+  font-size: 2rem;
+  font-family: "Rubik", sans-serif;
+}
+
+.additionally .heading img {
+  max-width: 180px;
+  margin: 0 auto;
+  transform: translateX(50%);
+}
+
+.additionally img.sb_logo {
+  max-width: 200px;
+  margin: 0 auto;
+}
+
+.additionally .box-wrapper {
+  margin-top: auto;
+}
+
+.additionally .row {
+  max-width: 100%;
+}
+
+/*
+** **
+** ** ** Media Queries
+** **
+*/
+@media screen and (max-width: 1100px) {
+  section.additionally {
+    background-size: 150% 100%;
+  }
+}
+
+@media screen and (max-width: 800px) {
+  section.additionally {
+    background-size: 200% 100%;
+    background-position: center center;
+  }
+
+  .additionally .heading img {
+    transform: none;
+  }
+
+  .additionally .row {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
   }
 }
