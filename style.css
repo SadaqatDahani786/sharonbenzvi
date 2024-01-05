@@ -850,7 +850,7 @@ footer.footer {
   right: 0;
 }
 
-.footer a.contact-link {
+a.contact-link {
   text-decoration: none;
   font-size: 1.8rem;
   font-weight: 300;
@@ -1184,5 +1184,144 @@ section.customers {
     width: 90%;
     margin: 40px;
     padding: 20px;
+  }
+}
+
+/*
+** **
+** ** ** Section Contact Us
+** **
+*/
+section.contact-us {
+  min-height: 100%;
+  background: url(assets/background-prime.png);
+  background-size: cover;
+  color: var(--white);
+  display: flex;
+  text-align: center;
+  padding: 40px 0;
+}
+
+.contact-us .end-info {
+  flex: 2;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 40px;
+  padding: 24px;
+}
+
+.contact-us .end-info .intro {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.contact-us .end-info .title {
+  max-width: 300px;
+}
+
+.contact-us .end-info .links {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 8px;
+}
+
+.contact-us .start-form {
+  flex: 4;
+  background: rgba(131, 131, 131, 0.26);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 24px;
+}
+
+.contact-us .start-form .wrapper {
+  max-width: 900px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 24px;
+}
+
+.contact-us .start-form h2 {
+  font-size: 4rem;
+  font-weight: normal;
+  font-family: "Rubik", sans-serif;
+}
+
+.contact-us .start-form .contact-us-form {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.contact-us .start-form .form-group {
+  display: flex;
+  gap: 16px;
+}
+
+.contact-us .start-form input,
+.contact-us .start-form textarea {
+  flex: 1;
+  background: transparent;
+  border: none;
+  border-bottom: 1px solid var(--white);
+  color: var(--white);
+}
+
+.contact-us .start-form input {
+  height: 4rem;
+}
+
+.contact-us .start-form textarea {
+  height: 7rem;
+  resize: none;
+}
+
+.contact-us .start-form button {
+  width: fit-content;
+  padding: 8px 16px;
+  margin: 0 auto;
+  background: var(--black);
+  color: var(--white);
+  border: 1px solid var(--white);
+  text-transform: uppercase;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.contact-us .start-form button:hover {
+  background: transparent;
+}
+
+/*
+** **
+** ** ** Media Queries
+** **
+*/
+@media screen and (max-width: 1200px) {
+  .contact-us {
+    flex-direction: column-reverse;
+  }
+}
+
+@media screen and (max-width: 750px) {
+  .contact-us .form-group {
+    flex-direction: column;
+    width: 100%;
+  }
+
+  .contact-us .form-group input {
+    flex: 0 0 4rem;
+  }
+
+  .contact-us .start-form h2 {
+    font-size: 3rem;
   }
 }
