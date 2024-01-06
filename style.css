@@ -22,14 +22,14 @@
     0.8px 1.6px 2px -0.8px hsl(var(--shadow-color) / 0.36),
     2.1px 4.1px 5.2px -1.7px hsl(var(--shadow-color) / 0.36),
     5px 10px 12.6px -2.5px hsl(var(--shadow-color) / 0.36);
-  --shadow-elevation-high: 0.3px 0.5px 0.7px hsl(var(--shadow-color) / 0.34),
-    1.5px 2.9px 3.7px -0.4px hsl(var(--shadow-color) / 0.34),
-    2.7px 5.4px 6.8px -0.7px hsl(var(--shadow-color) / 0.34),
-    4.5px 8.9px 11.2px -1.1px hsl(var(--shadow-color) / 0.34),
-    7.1px 14.3px 18px -1.4px hsl(var(--shadow-color) / 0.34),
-    11.2px 22.3px 28.1px -1.8px hsl(var(--shadow-color) / 0.34),
-    17px 33.9px 42.7px -2.1px hsl(var(--shadow-color) / 0.34),
-    25px 50px 62.9px -2.5px hsl(var(--shadow-color) / 0.34);
+  --shadow-elevation-high: 0.3px 0.5px 0.7px hsl(var(--shadow-color) / 0.1),
+    1.5px 2.9px 3.7px -0.4px hsl(var(--shadow-color) / 0.1),
+    2.7px 5.4px 6.8px -0.7px hsl(var(--shadow-color) / 0.1),
+    4.5px 8.9px 11.2px -1.1px hsl(var(--shadow-color) / 0.1),
+    7.1px 14.3px 18px -1.4px hsl(var(--shadow-color) / 0.1),
+    11.2px 22.3px 28.1px -1.8px hsl(var(--shadow-color) / 0.1),
+    17px 33.9px 42.7px -2.1px hsl(var(--shadow-color) / 0.1),
+    25px 50px 62.9px -2.5px hsl(var(--shadow-color) / 0.1);
 }
 
 /*
@@ -1328,7 +1328,7 @@ section.contact-us {
 
 /*
 ** **
-** ** ** Consulting - Customer Relations - Professionals
+** ** ** Consulting - Customer Relations - Professionals - Lands
 ** **
 */
 .consulting .wrapper,
@@ -1342,7 +1342,8 @@ section.contact-us {
 
 .consulting h2,
 .customer-relations h2,
-.professionals h2 {
+.professionals h2,
+.lands h2 {
   font-size: 2rem;
   font-family: "Rubik", sans-serif;
   font-weight: bold;
@@ -1456,5 +1457,73 @@ section.professionals {
   .professionals .row {
     flex-direction: column;
     align-items: center;
+  }
+}
+
+/*
+** **
+** ** ** Section Lands
+** **
+*/
+.lands {
+  min-height: 100%;
+  background-image: url(assets/background\ img.jpg);
+  background-size: cover;
+  background-position: center center;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 80px 24px;
+}
+
+.lands .wrapper {
+  width: 1400px;
+  height: 100%;
+  flex: 1;
+  display: flex;
+  gap: 40px;
+}
+
+.lands .lands__map,
+.lands .lands__info {
+  flex: 0 0 calc(50% - 40px);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-start;
+  gap: 24px;
+}
+
+.lands .lands__map {
+  background: url(assets/Service_bg.png);
+  background-size: cover;
+  background-position: bottom center;
+  border: 1px solid black;
+  box-shadow: var(--shadow-elevation-high);
+  align-items: center;
+}
+
+.lands .lands__map .map {
+  width: 80%;
+}
+
+.lands .lands__map .map-logo {
+  align-self: flex-end;
+}
+
+.lands .lands__info .button {
+  margin: 0 auto;
+}
+
+@media screen and (max-width: 1400px) {
+  .lands .wrapper {
+    width: 100%;
+  }
+}
+
+@media screen and (max-width: 800px) {
+  .lands .wrapper {
+    flex-direction: column-reverse;
   }
 }
