@@ -198,6 +198,19 @@ p.callout {
   color: var(--white);
 }
 
+a.button {
+  width: fit-content;
+  padding: 8px 24px;
+  background: var(--primary);
+  color: var(--white);
+  text-decoration: none;
+  transition: all 0.3s ease;
+}
+
+a.button:hover {
+  background-color: var(--info);
+}
+
 @media screen and (max-width: 1200px) {
   .row {
     max-width: 100%;
@@ -612,11 +625,7 @@ section.about {
 .right p.lead {
   max-width: 80%;
 }
-@media screen and (max-width: 1200px) {
-  .customers .content {
-    width: 80%;
-  }
-}
+
 .right h2 {
   font-family: "Rubik", sans-serif;
 }
@@ -628,19 +637,6 @@ section.about {
 
 .right p.lead {
   font-size: 1.4rem;
-}
-
-.right a.button {
-  width: fit-content;
-  padding: 8px 24px;
-  background: var(--primary);
-  color: var(--white);
-  text-decoration: none;
-  transition: all 0.3s ease;
-}
-
-.right a.button:hover {
-  background-color: var(--info);
 }
 
 .about .title {
@@ -690,6 +686,10 @@ section.about {
   .right p.lead {
     max-width: 100%;
     width: 100%;
+  }
+
+  .customers .content {
+    width: 80%;
   }
 }
 
@@ -1323,5 +1323,138 @@ section.contact-us {
 
   .contact-us .start-form h2 {
     font-size: 3rem;
+  }
+}
+
+/*
+** **
+** ** ** Consulting - Customer Relations - Professionals
+** **
+*/
+.consulting .wrapper,
+.customer-relations .wrapper,
+.professionals .wrapper {
+  max-width: 1200px;
+  display: flex;
+  flex-direction: column;
+  gap: 40px;
+}
+
+.consulting h2,
+.customer-relations h2,
+.professionals h2 {
+  font-size: 2rem;
+  font-family: "Rubik", sans-serif;
+  font-weight: bold;
+  text-decoration: underline;
+}
+
+/*
+** **
+** ** ** Section Consulting
+** **
+*/
+section.consulting {
+  min-height: 100%;
+  color: var(--primary);
+  background-image: url(assets/background\ img.jpg);
+  background-size: cover;
+  background-position: center center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 40px 24px;
+}
+
+.consulting .text-content {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+/*
+** **
+** ** ** Section Customer Relations
+** **
+*/
+section.customer-relations {
+  background-image: url(assets/background-prime.png);
+  background-size: cover;
+  padding: 16px 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  color: var(--white);
+}
+
+.customer-relations .wrapper {
+  padding: 40px 24px;
+  gap: 16px;
+}
+
+/*
+** **
+** ** ** Section Professionals
+** **
+*/
+section.professionals {
+  min-height: 100%;
+  background-image: url(assets/background\ img.jpg);
+  background-size: cover;
+  background-position: center center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 80px 24px;
+}
+
+.professionals .wrapper {
+  flex-direction: row;
+  width: 75%;
+}
+
+.professionals .row {
+  max-width: 100%;
+}
+
+.professionals .wrapper .col {
+  flex: 1 1 340px;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.professionals .wrapper .col:nth-of-type(1) {
+  flex: 1 1 520px;
+}
+
+.professionals .wrapper .col:nth-of-type(3) {
+  padding-top: 68px;
+}
+
+.professionals a.button {
+  margin-top: auto;
+}
+
+@media screen and (max-width: 1200px) {
+  .professionals .wrapper {
+    width: 100%;
+  }
+}
+
+@media screen and (max-width: 800px) {
+  .professionals .wrapper {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .professionals .col {
+    align-items: center;
+  }
+
+  .professionals .row {
+    flex-direction: column;
+    align-items: center;
   }
 }
