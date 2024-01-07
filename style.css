@@ -197,6 +197,7 @@ p.callout {
   font-family: "Lemon", serif;
   font-size: 2rem;
   color: var(--white);
+  text-align: center;
 }
 
 a.button {
@@ -1067,6 +1068,14 @@ section.conclusion {
   .additionally .heading img,
   .conclusion .heading img {
     transform: none;
+  }
+}
+
+@media screen and (max-width: 600px) {
+  .additionally .heading,
+  .conclusion .heading {
+    flex-direction: column-reverse;
+    text-align: center;
   }
 }
 
