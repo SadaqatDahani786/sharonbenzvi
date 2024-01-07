@@ -1,6 +1,6 @@
 /*
 ** **
-** ** ** Variables
+** ** ** Css Custome Props/Vars
 ** **
 */
 :root {
@@ -156,6 +156,7 @@ p.callout {
   display: flex;
   gap: 8px;
   max-width: 80%;
+  overflow: hidden;
 }
 
 .row .icon-wrap {
@@ -193,7 +194,7 @@ p.callout {
 }
 
 .box h3 {
-  font-family: "Philosopher", sans-serif;
+  font-family: "Lemon", serif;
   font-size: 2rem;
   color: var(--white);
 }
@@ -231,6 +232,7 @@ a.button:hover {
   border-bottom: var(--border-size) solid var(--border-color);
   padding: 0 48px;
   display: flex;
+  flex-direction: row-reverse;
   justify-content: space-between;
   align-items: center;
   position: relative;
@@ -426,6 +428,7 @@ section.hero {
   align-items: center;
   gap: 64px;
   padding-top: 80px;
+  overflow: hidden;
 }
 
 .hero .intro {
@@ -517,7 +520,7 @@ section.hero {
 }
 
 .hero .card:hover {
-  transform: scale(1.1);
+  transform: scale(1.1) !important;
   background-image: radial-gradient(
     at center center,
     #005171 10%,
@@ -561,7 +564,7 @@ section.hero {
 }
 
 .hero .end h2 {
-  font-family: "Philosopher", sans-serif;
+  font-family: "Lemon", serif;
 }
 
 .hero .end .box-outer {
@@ -593,7 +596,6 @@ section.about {
   background-image: url(assets/background\ img.jpg);
   background-size: cover;
   display: flex;
-  align-items: center;
   gap: 24px;
   padding: 140px 80px;
   border-top: var(--border-size) solid var(--primary);
@@ -609,14 +611,19 @@ section.about {
 }
 
 .left {
+  min-height: 100%;
+  justify-content: flex-start;
   align-items: flex-end;
 }
 
 .left img.featured-image {
   max-width: 500px;
+  position: sticky;
+  top: 0px;
 }
 
 .right {
+  margin: auto;
   display: flex;
   flex-direction: column;
   gap: 24px;
@@ -747,11 +754,13 @@ section.our-customers {
   flex-direction: column;
   background: var(--primary);
   color: var(--primary);
+  overflow: hidden;
 }
 
 .our-customers .left .wrapper {
-  border: 1px solid black;
+  border: 1px solid var(--black);
   padding: 40px;
+  margin: auto 0;
 }
 
 .our-customers .main-content {
@@ -1200,6 +1209,7 @@ section.contact-us {
   display: flex;
   text-align: center;
   padding: 40px 0;
+  overflow: hidden;
 }
 
 .contact-us .end-info {
@@ -1237,6 +1247,7 @@ section.contact-us {
   align-items: center;
   justify-content: center;
   padding: 24px;
+  overflow: hidden;
 }
 
 .contact-us .start-form .wrapper {
@@ -1247,8 +1258,7 @@ section.contact-us {
   align-items: center;
   gap: 24px;
 }
-
-.contact-us .start-form h2 {
+a .contact-us .start-form h2 {
   font-size: 4rem;
   font-weight: normal;
   font-family: "Rubik", sans-serif;
@@ -1438,6 +1448,11 @@ section.professionals {
   margin-top: auto;
 }
 
+/*
+** **
+** ** ** Media Queries
+** **
+*/
 @media screen and (max-width: 1200px) {
   .professionals .wrapper {
     width: 100%;
@@ -1516,6 +1531,11 @@ section.professionals {
   margin: 0 auto;
 }
 
+/*
+** **
+** ** ** Media Queries
+** **
+*/
 @media screen and (max-width: 1400px) {
   .lands .wrapper {
     width: 100%;
